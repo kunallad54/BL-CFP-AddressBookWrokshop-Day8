@@ -12,11 +12,11 @@ public interface IAddressBookService {
 
     List<AddressBookDTO> getAddressBook();
 
-    AddressBook updatePersonDetails(int id, AddressBookDTO addressBookDTO) throws AddressBookCustomException;
+    AddressBookDTO updatePersonDetails(int id, AddressBookDTO addressBookDTO) throws AddressBookCustomException;
 
     AddressBook findPersonByID(int id) throws AddressBookCustomException;
 
-    AddressBook deletePersonDetails(int id) throws AddressBookCustomException;
+    AddressBookDTO deletePersonDetails(int id) throws AddressBookCustomException;
 
-    AddressBook getPersonDetailsByID(int id) throws AddressBookCustomException;
+    AddressBookDTO getPersonDetailsByID(int id) throws AddressBookCustomException;
 }

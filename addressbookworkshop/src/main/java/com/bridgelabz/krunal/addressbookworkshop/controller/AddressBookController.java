@@ -18,6 +18,7 @@ import com.bridgelabz.krunal.addressbookworkshop.dto.ResponseDTO;
 import com.bridgelabz.krunal.addressbookworkshop.entity.AddressBook;
 import com.bridgelabz.krunal.addressbookworkshop.exceptions.AddressBookCustomException;
 import com.bridgelabz.krunal.addressbookworkshop.service.IAddressBookService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +27,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+@Slf4j
 @RestController
+@RequestMapping
 public class AddressBookController {
 
     /**
@@ -44,6 +47,7 @@ public class AddressBookController {
      */
     @PostMapping(value = "/addPersonDetails")
     public ResponseEntity<ResponseDTO> addPersonDetails(@Valid @RequestBody AddressBookDTO addressBookDTO) {
+        log.info("Inside addPersonDetails() controller method");
         AddressBookDTO newPersonDetails = addressBookService.addPersonDetails(addressBookDTO);
         ResponseDTO responseDTO = new ResponseDTO("Added new Person Details", newPersonDetails);
         return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
@@ -56,6 +60,7 @@ public class AddressBookController {
      */
     @GetMapping(value = "/getAddressBook")
     public ResponseEntity<ResponseDTO> getAddressBook() {
+        log.info("Inside getAddressBook() Controller method");
         List<AddressBookDTO> addressBook = addressBookService.getAddressBook();
         ResponseDTO responseDTO = new ResponseDTO("Got All Persons from AddressBook", addressBook);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
@@ -70,7 +75,8 @@ public class AddressBookController {
      */
     @GetMapping(value = "/getPersonByID")
     public ResponseEntity<ResponseDTO> getPersonByID(@RequestParam(name = "id") int id) throws AddressBookCustomException {
-        AddressBook personByID = addressBookService.findPersonByID(id);
+        log.info("Inside getPersonByID() Controller method");
+        AddressBookDTO personByID = addressBookService.getPersonDetailsByID(id);
         ResponseDTO responseDTO = new ResponseDTO("Get Call with Person ID Successfull",
                 personByID);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
@@ -87,7 +93,8 @@ public class AddressBookController {
     @PutMapping(value = "/updatePersonDetails")
     public ResponseEntity<ResponseDTO> updatePersonDetails(@RequestParam(name = "id") int id,
                                                            @RequestBody AddressBookDTO addressBookDTO) throws AddressBookCustomException {
-        AddressBook updatedDetails = addressBookService.updatePersonDetails(id, addressBookDTO);
+        log.info("Inside updatePersonDetails() method of Controller");
+        AddressBookDTO updatedDetails = addressBookService.updatePersonDetails(id, addressBookDTO);
         ResponseDTO responseDTO = new ResponseDTO("Updated Person Details Successfully !!!"
                 , updatedDetails);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
@@ -102,7 +109,8 @@ public class AddressBookController {
      */
     @DeleteMapping(value = "/deletePersonDetails")
     public ResponseEntity<ResponseDTO> deletePersonDetails(@Valid @RequestParam(name = "id") int id) throws AddressBookCustomException {
-        AddressBook addressBookAfterDeletion = addressBookService.deletePersonDetails(id);
+        log.info("Inside deletePersonDetails() Controller method");
+        AddressBookDTO addressBookAfterDeletion = addressBookService.deletePersonDetails(id);
         ResponseDTO responseDTO = new ResponseDTO("Delete Call Successfull", addressBookAfterDeletion);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }

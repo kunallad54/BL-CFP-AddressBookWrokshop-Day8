@@ -3,10 +3,12 @@
  */
 package com.bridgelabz.krunal.addressbookworkshop.service;
 
+import com.bridgelabz.krunal.addressbookworkshop.builder.AddressBuilder;
 import com.bridgelabz.krunal.addressbookworkshop.dto.AddressBookDTO;
 import com.bridgelabz.krunal.addressbookworkshop.entity.AddressBook;
 import com.bridgelabz.krunal.addressbookworkshop.exceptions.AddressBookCustomException;
 import com.bridgelabz.krunal.addressbookworkshop.repository.IAddressBookRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class AddressBookService implements IAddressBookService {
 
@@ -24,7 +27,11 @@ public class AddressBookService implements IAddressBookService {
     @Autowired
     private IAddressBookRepository addressBookRepository;
 
+    @Autowired
     private ModelMapper mapper = new ModelMapper();
+
+    @Autowired
+    private AddressBuilder addressBuilder;
 
     /**
      * Purpose : To perform add operation i.e to add person details and then save it to repository which
@@ -35,8 +42,10 @@ public class AddressBookService implements IAddressBookService {
      */
     @Override
     public AddressBookDTO addPersonDetails(AddressBookDTO addressBookDTO) {
-        AddressBook addressBook = mapper.map(addressBookDTO, AddressBook.class);
-        addressBookRepository.save(addressBook);
+        log.info("Inside addPersonDetails() method");
+        AddressBook addressBook = addressBuilder.buildDO(addressBookDTO);
+        AddressBook addressBook1 = addressBookRepository.save(addressBook);
+        addressBookDTO.setPID(addressBook1.getPID());
         return addressBookDTO;
     }
 
@@ -47,6 +56,7 @@ public class AddressBookService implements IAddressBookService {
      */
     @Override
     public List<AddressBookDTO> getAddressBook(){
+        log.info("Inside getAddressBook() method");
 //        return addressBookRepository.findAll();
         return addressBookRepository.findAll().stream().map(element -> {
             return new AddressBookDTO(element.getPID(), element.getPName(), element.getPAddress(),
@@ -64,12 +74,13 @@ public class AddressBookService implements IAddressBookService {
      * @throws AddressBookCustomException
      */
     @Override
-    public AddressBook updatePersonDetails(int id, AddressBookDTO addressBookDTO) throws AddressBookCustomException {
+    public AddressBookDTO updatePersonDetails(int id, AddressBookDTO addressBookDTO) throws AddressBookCustomException {
+        log.info("Inside updatePersonDetails() method");
         AddressBook updateData = findPersonByID(id);
         String[] ignoreFields = {"pID","createdDate"};
         BeanUtils.copyProperties(addressBookDTO,updateData,ignoreFields);
         addressBookRepository.save(updateData);
-        return updateData;
+        return addressBookDTO;
     }
 
     /**
@@ -80,11 +91,12 @@ public class AddressBookService implements IAddressBookService {
      * @throws AddressBookCustomException
      */
     @Override
-    public AddressBook deletePersonDetails(int id) throws AddressBookCustomException {
+    public AddressBookDTO deletePersonDetails(int id) throws AddressBookCustomException {
+        log.info("Inside deletePersonDetails() method");
         AddressBook addressBook = findPersonByID(id);
         addressBookRepository.delete(addressBook);
         System.out.println("Deleted Successfully !!!");
-        return addressBook;
+        return null;
     }
 
     /**
@@ -95,9 +107,11 @@ public class AddressBookService implements IAddressBookService {
      * @throws AddressBookCustomException
      */
     @Override
-    public AddressBook getPersonDetailsByID(int id) throws AddressBookCustomException {
+    public AddressBookDTO getPersonDetailsByID(int id) throws AddressBookCustomException {
+        log.info("Inside getPersonDetailsByID() method");
         AddressBook addressBook = findPersonByID(id);
-        return addressBook;
+        AddressBookDTO addressBookDTO = mapper.map(addressBook,AddressBookDTO.class);
+        return addressBookDTO;
     }
 
     /**
@@ -109,6 +123,7 @@ public class AddressBookService implements IAddressBookService {
      */
     @Override
     public AddressBook findPersonByID(int id) throws AddressBookCustomException {
+        log.info("Inside findPersonByID() method");
         return addressBookRepository
                 .findById(id)
                 .orElseThrow(()-> new AddressBookCustomException("Person ID Not found", AddressBookCustomException.ExceptionType.ID_NOT_FOUND));

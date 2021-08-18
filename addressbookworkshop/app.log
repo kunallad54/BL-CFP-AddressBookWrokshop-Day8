@@ -1,0 +1,56 @@
+2021-08-18 21:55:35,015 INFO com.bridgelabz.krunal.addressbookworkshop.AddressBookWorkshopApplication [restartedMain] Starting AddressBookWorkshopApplication using Java 11.0.11 on DESKTOP-M2BVJTD with PID 60104 (C:\Users\Kunal\Desktop\CFG Batch\Assignments\Workshop\BL-CFP-AddressBookWrokshop-Day8\addressbookworkshop\target\classes started by Kunal in C:\Users\Kunal\Desktop\CFG Batch\Assignments\Workshop\BL-CFP-AddressBookWrokshop-Day8\addressbookworkshop)
+2021-08-18 21:55:35,015 INFO com.bridgelabz.krunal.addressbookworkshop.AddressBookWorkshopApplication [restartedMain] The following profiles are active: dev
+2021-08-18 21:55:38,104 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-18 21:55:38,302 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 196 ms. Found 1 JPA repository interfaces.
+2021-08-18 21:55:39,231 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8090 (http)
+2021-08-18 21:55:39,231 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2021-08-18 21:55:39,231 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-18 21:55:39,288 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/address-book] [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-08-18 21:55:39,288 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 4255 ms
+2021-08-18 21:55:39,382 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-18 21:55:39,413 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2021-08-18 21:55:39,475 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2021-08-18 21:55:39,476 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-08-18 21:55:40,834 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-18 21:55:40,834 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-18 21:55:41,099 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-18 21:55:41,177 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-08-18 21:55:41,255 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-08-18 21:55:41,349 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8090 (http) with context path '/address-book'
+2021-08-18 21:55:41,349 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
+2021-08-18 21:55:41,365 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
+2021-08-18 21:55:41,365 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
+2021-08-18 21:55:41,497 INFO com.bridgelabz.krunal.addressbookworkshop.AddressBookWorkshopApplication [restartedMain] Started AddressBookWorkshopApplication in 7.476 seconds (JVM running for 23992.032)
+2021-08-18 21:55:41,501 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2021-08-18 21:55:41,507 INFO com.bridgelabz.krunal.addressbookworkshop.AddressBookWorkshopApplication [restartedMain] Address App has Started
+2021-08-18 21:55:43,069 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [Thread-7] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-18 21:55:43,069 INFO com.zaxxer.hikari.HikariDataSource [Thread-7] HikariPool-2 - Shutdown initiated...
+2021-08-18 21:55:43,084 INFO com.zaxxer.hikari.HikariDataSource [Thread-7] HikariPool-2 - Shutdown completed.
+2021-08-18 21:55:43,225 INFO com.bridgelabz.krunal.addressbookworkshop.AddressBookWorkshopApplication [restartedMain] Starting AddressBookWorkshopApplication using Java 11.0.11 on DESKTOP-M2BVJTD with PID 60104 (C:\Users\Kunal\Desktop\CFG Batch\Assignments\Workshop\BL-CFP-AddressBookWrokshop-Day8\addressbookworkshop\target\classes started by Kunal in C:\Users\Kunal\Desktop\CFG Batch\Assignments\Workshop\BL-CFP-AddressBookWrokshop-Day8\addressbookworkshop)
+2021-08-18 21:55:43,225 INFO com.bridgelabz.krunal.addressbookworkshop.AddressBookWorkshopApplication [restartedMain] The following profiles are active: dev
+2021-08-18 21:55:43,827 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-18 21:55:43,905 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interfaces.
+2021-08-18 21:55:44,264 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8090 (http)
+2021-08-18 21:55:44,264 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2021-08-18 21:55:44,264 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-18 21:55:44,342 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/address-book] [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-08-18 21:55:44,342 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1101 ms
+2021-08-18 21:55:44,405 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-18 21:55:44,405 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2021-08-18 21:55:44,420 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2021-08-18 21:55:44,420 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-08-18 21:55:45,121 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-18 21:55:45,121 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-18 21:55:45,371 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-18 21:55:45,466 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-08-18 21:55:45,592 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-08-18 21:55:45,679 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8090 (http) with context path '/address-book'
+2021-08-18 21:55:45,680 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
+2021-08-18 21:55:45,681 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
+2021-08-18 21:55:45,690 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
+2021-08-18 21:55:45,734 INFO com.bridgelabz.krunal.addressbookworkshop.AddressBookWorkshopApplication [restartedMain] Started AddressBookWorkshopApplication in 2.571 seconds (JVM running for 23996.269)
+2021-08-18 21:55:45,741 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2021-08-18 21:55:45,742 INFO com.bridgelabz.krunal.addressbookworkshop.AddressBookWorkshopApplication [restartedMain] Address App has Started
+2021-08-18 21:57:44,352 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [Thread-11] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-18 21:57:44,352 INFO com.zaxxer.hikari.HikariDataSource [Thread-11] HikariPool-3 - Shutdown initiated...
+2021-08-18 21:57:44,383 INFO com.zaxxer.hikari.HikariDataSource [Thread-11] HikariPool-3 - Shutdown completed.

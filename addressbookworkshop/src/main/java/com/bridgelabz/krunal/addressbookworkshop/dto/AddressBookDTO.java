@@ -6,6 +6,7 @@ package com.bridgelabz.krunal.addressbookworkshop.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
@@ -14,6 +15,7 @@ import javax.validation.constraints.Size;
 
 @AllArgsConstructor
 @Data
+@NoArgsConstructor
 public class AddressBookDTO {
 
     private int pID;
@@ -32,10 +34,10 @@ public class AddressBookDTO {
     @Email(message = "Please Enter Valid Email")
     private String pEmail;
 
-    @Size(min = 10,max = 10,message = "Please Enter Valid Phone Number")
+   // @Size(min = 10,max = 10,message = "Please Enter Valid Phone Number")
     private String pMobileNumber;
 
-    @Size(min = 6,max = 6,message = "Please Enter Valid Zip Code")
+   // @Size(min = 6,max = 6,message = "Please Enter Valid Zip Code")
     private String pZip;
 
 }
